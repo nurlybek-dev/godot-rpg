@@ -1,0 +1,125 @@
+[gd_scene load_steps=18 format=3 uid="uid://b67apj6bciddu"]
+
+[ext_resource type="Script" path="res://projectiles/thunder/ThunderStrike.gd" id="1_acorc"]
+[ext_resource type="Texture2D" uid="uid://dkknhvyrsb3w2" path="res://assets/SVX/Thunder Effect 02/Thunder Strike/Thunderstrike w blur.png" id="1_f4gdw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0m38x"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44ujb"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lpcve"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0y28u"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jx74w"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q58jb"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kghj2"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxppq"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j0pf"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f5jo6"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tryig"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_syh2x"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(704, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jh0yl"]
+atlas = ExtResource("1_f4gdw")
+region = Rect2(768, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k5n7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0m38x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44ujb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lpcve")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0y28u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jx74w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q58jb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kghj2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxppq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j0pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f5jo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tryig")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_syh2x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jh0yl")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 20.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eiqiy"]
+radius = 21.0238
+
+[node name="ThunderStrike" type="Area2D"]
+collision_layer = 0
+collision_mask = 8388610
+script = ExtResource("1_acorc")
+speed = 0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -25)
+sprite_frames = SubResource("SpriteFrames_k5n7k")
+animation = &"impact"
+autoplay = "impact"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("CircleShape2D_eiqiy")
+disabled = true
+
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]

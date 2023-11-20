@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://km30370jfcda"]
 
-[ext_resource type="Script" path="res://projectiles/FireExplosion.gd" id="1_57e1r"]
-[ext_resource type="PackedScene" uid="uid://bkc4ymih23t2y" path="res://projectiles/FireExplosionProjectile.tscn" id="2_mmyjy"]
+[ext_resource type="Script" path="res://projectiles/fire/FireExplosion.gd" id="1_57e1r"]
+[ext_resource type="PackedScene" uid="uid://bkc4ymih23t2y" path="res://projectiles/fire/FireExplosionProjectile.tscn" id="2_mmyjy"]
 
 [node name="FireExplosion" type="Node2D"]
 script = ExtResource("1_57e1r")

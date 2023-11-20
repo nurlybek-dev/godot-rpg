@@ -1,46 +1,46 @@
 [gd_scene load_steps=15 format=3 uid="uid://b6bij6ul18v44"]
 
-[ext_resource type="Texture2D" uid="uid://b6qshug0o867s" path="res://assets/SVX/Fire Effect 1/Firebolt SpriteSheet.png" id="1_6ovir"]
-[ext_resource type="Script" path="res://projectiles/Fireboll.gd" id="1_dmkd7"]
+[ext_resource type="Script" path="res://projectiles/fire/Fireboll.gd" id="1_qgurw"]
+[ext_resource type="Texture2D" uid="uid://b6qshug0o867s" path="res://assets/SVX/Fire Effect 1/Firebolt SpriteSheet.png" id="2_x4hu0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_553am"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dxwtg"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_41nel"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67lh7"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uidkh"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(240, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rlg2e"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(288, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nmppn"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(336, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rsmxj"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(384, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_slnxe"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(432, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_byq2s"]
-atlas = ExtResource("1_6ovir")
+atlas = ExtResource("2_x4hu0")
 region = Rect2(480, 0, 48, 48)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_uus35"]
@@ -92,7 +92,7 @@ size = Vector2(23, 6)
 [node name="Fireboll" type="Area2D"]
 collision_layer = 0
 collision_mask = 8388610
-script = ExtResource("1_dmkd7")
+script = ExtResource("1_qgurw")
 speed = 400
 damage = 5
 

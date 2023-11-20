@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://dr2vdb0c5qasd" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Knight/Death/Death-Sheet.png" id="3_fu4xs"]
 [ext_resource type="Texture2D" uid="uid://b1xm1eo0qn8y6" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Knight/Idle/Idle-Sheet.png" id="4_x7nd5"]
 [ext_resource type="Texture2D" uid="uid://ba3vqer78mxtu" path="res://assets/Pixel Crawler - FREE - 1.8/Heroes/Knight/Run/Run-Sheet.png" id="5_sfyf1"]
-[ext_resource type="PackedScene" uid="uid://bld8kw6yca6eb" path="res://weapons/FireWand.tscn" id="6_aud1k"]
 [ext_resource type="PackedScene" uid="uid://dsbxcfqjky2mw" path="res://health.tscn" id="6_vus4i"]
+[ext_resource type="PackedScene" uid="uid://d2y24by72u8gj" path="res://weapons/ThunderWand.tscn" id="6_yi712"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8rxih"]
 atlas = ExtResource("3_fu4xs")
@@ -153,13 +153,12 @@ autoplay = "idle"
 shape = SubResource("CapsuleShape2D_2ffcv")
 
 [node name="Health" parent="." instance=ExtResource("6_vus4i")]
-start_health = 100
 
 [node name="Weapon" type="Node2D" parent="."]
 position = Vector2(0, 4)
 
-[node name="FireWand" parent="Weapon" instance=ExtResource("6_aud1k")]
-rotation = -0.0567484
+[node name="ThunderWand" parent="Weapon" instance=ExtResource("6_yi712")]
+scale = Vector2(0.8, 0.8)
 
 [connection signal="die_signal" from="Health" to="." method="_on_health_die_signal"]
 [connection signal="hit_signal" from="Health" to="." method="_on_health_hit_signal"]

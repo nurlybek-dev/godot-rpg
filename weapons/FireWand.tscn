@@ -2,19 +2,17 @@
 
 [ext_resource type="Texture2D" uid="uid://bxmnr3ksdqr4j" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="1_8ebn3"]
 [ext_resource type="Script" path="res://weapons/FireWand.gd" id="1_xnhy5"]
-[ext_resource type="PackedScene" uid="uid://b6bij6ul18v44" path="res://projectiles/Fireboll.tscn" id="2_sql7w"]
-[ext_resource type="PackedScene" uid="uid://km30370jfcda" path="res://projectiles/FireExplosion.tscn" id="3_5cbxi"]
-[ext_resource type="PackedScene" uid="uid://42e5fydo85eb" path="res://projectiles/FireBreath.tscn" id="4_n855r"]
+[ext_resource type="PackedScene" uid="uid://b6bij6ul18v44" path="res://projectiles/fire/Fireboll.tscn" id="2_07wi8"]
+[ext_resource type="PackedScene" uid="uid://km30370jfcda" path="res://projectiles/fire/FireExplosion.tscn" id="3_ei0up"]
+[ext_resource type="PackedScene" uid="uid://42e5fydo85eb" path="res://projectiles/fire/FireBreath.tscn" id="4_n66fi"]
 
 [node name="FireWand" type="Node2D"]
 scale = Vector2(0.8, 0.8)
 script = ExtResource("1_xnhy5")
-basic_projectile_scene = ExtResource("2_sql7w")
-special_projectile_scene = ExtResource("3_5cbxi")
-ultimate_projectile_scene = ExtResource("4_n855r")
+basic_projectile_scene = ExtResource("2_07wi8")
+special_projectile_scene = ExtResource("3_ei0up")
+ultimate_projectile_scene = ExtResource("4_n66fi")
 basic_attack_cooldown = 0.4
-special_attack_cooldown = 1.0
-ultimate_attack_cooldown = 1.0
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_8ebn3")

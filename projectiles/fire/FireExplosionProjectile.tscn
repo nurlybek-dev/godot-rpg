@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=3 uid="uid://bkc4ymih23t2y"]
 
-[ext_resource type="Script" path="res://projectiles/FireExplosionProjectile.gd" id="1_y6qkr"]
+[ext_resource type="Script" path="res://projectiles/fire/FireExplosionProjectile.gd" id="1_y6qkr"]
 [ext_resource type="Texture2D" uid="uid://csm0mh6eulnat" path="res://assets/SVX/Fire Effect 2/Explosion 2 SpriteSheet.png" id="2_6d1ty"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mium0"]

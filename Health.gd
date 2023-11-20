@@ -3,8 +3,8 @@ extends Node2D
 signal hit_signal
 signal die_signal
 
-@export var start_health: int = 0
-var health: int = 0
+@export var start_health: float = 0
+var health: float = 0
 
 func reset():
 	health = start_health
@@ -13,7 +13,7 @@ func reset():
 func _ready() -> void:
 	reset()
 
-func hit(value: int) -> void:
+func hit(value: float) -> void:
 	print(Time.get_datetime_string_from_system(), ": ", self, " hit ", value)
 	health -= value
 	hit_signal.emit()

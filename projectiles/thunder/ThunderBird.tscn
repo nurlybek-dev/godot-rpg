@@ -1,0 +1,151 @@
+[gd_scene load_steps=21 format=3 uid="uid://dwj4icvs8g4pe"]
+
+[ext_resource type="Texture2D" uid="uid://cmb6s3tr3r57n" path="res://assets/SVX/Thunder Effect 01/Projectile 2/Projectile 2 w blur.png" id="1_3atfs"]
+[ext_resource type="Script" path="res://projectiles/thunder/ThunderBird.gd" id="1_xbv4b"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_meydc"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_27bu4"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5bhwy"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hivsb"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m53j5"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1swh"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(240, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68amt"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(288, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_72ub7"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(336, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r1d1i"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(384, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad1dt"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(432, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xke60"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(480, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djdmb"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(528, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_op4rj"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(576, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_onnxd"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(624, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djgra"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(672, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2qgnm"]
+atlas = ExtResource("1_3atfs")
+region = Rect2(720, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ab1k3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_meydc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_27bu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5bhwy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hivsb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m53j5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1swh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68amt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_72ub7")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r1d1i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad1dt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xke60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djdmb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_op4rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_onnxd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djgra")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2qgnm")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 16.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qg3a"]
+radius = 20.0998
+
+[node name="ThunderBird" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_xbv4b")
+speed = 400
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ab1k3")
+animation = &"fly"
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8qg3a")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

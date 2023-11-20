@@ -2,7 +2,7 @@ extends Area2D
 class_name Projectile
 
 @export var speed = 100
-@export var damage = 1
+@export var damage: float = 1.0
 
 var velocity
 

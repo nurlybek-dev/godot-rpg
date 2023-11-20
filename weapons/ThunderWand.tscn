@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2y24by72u8gj"]
+
+[ext_resource type="Script" path="res://weapons/ThunderWand.gd" id="1_jlmg8"]
+[ext_resource type="Texture2D" uid="uid://bxmnr3ksdqr4j" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="1_oa6yf"]
+[ext_resource type="PackedScene" uid="uid://b5lhqk2kkwir6" path="res://projectiles/thunder/Lighningboll.tscn" id="2_8qf4o"]
+[ext_resource type="PackedScene" uid="uid://b67apj6bciddu" path="res://projectiles/thunder/ThunderStrike.tscn" id="3_mflmy"]
+[ext_resource type="PackedScene" uid="uid://dwj4icvs8g4pe" path="res://projectiles/thunder/ThunderBird.tscn" id="4_2ucdf"]
+
+[node name="ThunderWand" type="Node2D"]
+script = ExtResource("1_jlmg8")
+basic_projectile_scene = ExtResource("2_8qf4o")
+special_projectile_scene = ExtResource("3_mflmy")
+ultimate_projectile_scene = ExtResource("4_2ucdf")
+basic_attack_cooldown = 0.2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oa6yf")
+offset = Vector2(14.5, 0)
+region_enabled = true
+region_rect = Rect2(81, 3, 29, 10)
+
+[node name="BasicShootPosition" type="Marker2D" parent="."]
+position = Vector2(41, 0)
+
+[node name="SpecialShootPosition" type="Marker2D" parent="."]
+
+[node name="UltimateShootPosition" type="Marker2D" parent="."]
+position = Vector2(49, 0)

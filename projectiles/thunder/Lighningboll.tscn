@@ -1,0 +1,112 @@
+[gd_scene load_steps=17 format=3 uid="uid://b5lhqk2kkwir6"]
+
+[ext_resource type="Script" path="res://projectiles/thunder/Lightningboll.gd" id="1_xkdxk"]
+[ext_resource type="Texture2D" uid="uid://ctxhf5eoua6u8" path="res://assets/SVX/Thunder Effect 01/Thunder Projectile 1/Thunder projectile1 w blur.png" id="2_xn7os"]
+[ext_resource type="Texture2D" uid="uid://brihfeqn1gebv" path="res://assets/SVX/Thunder Effect 01/Thunder Hit/Thunder hit w blur.png" id="3_f253g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnlpl"]
+atlas = ExtResource("2_xn7os")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ueeva"]
+atlas = ExtResource("2_xn7os")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_are24"]
+atlas = ExtResource("2_xn7os")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pcixg"]
+atlas = ExtResource("2_xn7os")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxytk"]
+atlas = ExtResource("2_xn7os")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8umw7"]
+atlas = ExtResource("3_f253g")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3kgdk"]
+atlas = ExtResource("3_f253g")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vyih"]
+atlas = ExtResource("3_f253g")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vi74n"]
+atlas = ExtResource("3_f253g")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2vvyl"]
+atlas = ExtResource("3_f253g")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mu3fx"]
+atlas = ExtResource("3_f253g")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6r2h5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnlpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ueeva")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_are24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pcixg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxytk")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8umw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3kgdk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8vyih")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vi74n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2vvyl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mu3fx")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0g6ea"]
+size = Vector2(23, 6)
+
+[node name="Lightningboll" type="Area2D"]
+collision_layer = 0
+collision_mask = 8388610
+script = ExtResource("1_xkdxk")
+speed = 600
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6r2h5")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.5, 0)
+shape = SubResource("RectangleShape2D_0g6ea")
