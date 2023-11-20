@@ -1,0 +1,73 @@
+[gd_scene load_steps=4 format=3 uid="uid://m448akni26tc"]
+
+[ext_resource type="Script" path="res://ui.gd" id="1_ps268"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0121j"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_axxle"]
+bg_color = Color(1, 0, 0, 1)
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource("1_ps268")
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_top = 35.0
+offset_right = 96.0
+offset_bottom = 62.0
+grow_horizontal = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_0121j")
+theme_override_styles/fill = SubResource("StyleBoxFlat_axxle")
+step = 1.0
+value = 100.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 23.0
+grow_horizontal = 2
+text = "00:00"
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="GameOverContainer" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -183.0
+offset_top = -38.0
+offset_right = 183.0
+offset_bottom = 38.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="GameOverContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Label" type="Label" parent="GameOverContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Press Enter to restart"
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

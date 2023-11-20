@@ -1,0 +1,111 @@
+[gd_scene load_steps=16 format=3 uid="uid://42e5fydo85eb"]
+
+[ext_resource type="Texture2D" uid="uid://qag7siuem1x6" path="res://assets/SVX/Fire Effect 1/Fire Breath SpriteSheet.png" id="1_6kn3g"]
+[ext_resource type="Script" path="res://projectiles/FireBreath.gd" id="1_w6wvi"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fx1fs"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(0, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ccs7a"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(48, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6lps"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(96, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8ybg"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(144, 48, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwoku"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(0, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g3ynw"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(48, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pk534"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(96, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q37ep"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(144, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1er2m"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(192, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8ife"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(240, 96, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_su48j"]
+atlas = ExtResource("1_6kn3g")
+region = Rect2(288, 96, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8hlji"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fx1fs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ccs7a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6lps")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g8ybg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwoku")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g3ynw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pk534")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q37ep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1er2m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8ife")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_su48j")
+}],
+"loop": false,
+"name": &"impact",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ht6df"]
+size = Vector2(91, 15)
+
+[node name="FireBreath" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_w6wvi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2.70833, 1.125)
+sprite_frames = SubResource("SpriteFrames_8hlji")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9.5, 8.5)
+shape = SubResource("RectangleShape2D_ht6df")

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://bld8kw6yca6eb"]
+
+[ext_resource type="Texture2D" uid="uid://bxmnr3ksdqr4j" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="1_8ebn3"]
+[ext_resource type="Script" path="res://weapons/FireWand.gd" id="1_xnhy5"]
+[ext_resource type="PackedScene" uid="uid://b6bij6ul18v44" path="res://projectiles/Fireboll.tscn" id="2_sql7w"]
+[ext_resource type="PackedScene" uid="uid://km30370jfcda" path="res://projectiles/FireExplosion.tscn" id="3_5cbxi"]
+[ext_resource type="PackedScene" uid="uid://42e5fydo85eb" path="res://projectiles/FireBreath.tscn" id="4_n855r"]
+
+[node name="FireWand" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_xnhy5")
+basic_projectile_scene = ExtResource("2_sql7w")
+special_projectile_scene = ExtResource("3_5cbxi")
+ultimate_projectile_scene = ExtResource("4_n855r")
+basic_attack_cooldown = 0.4
+special_attack_cooldown = 1.0
+ultimate_attack_cooldown = 1.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ebn3")
+offset = Vector2(14.5, 0)
+region_enabled = true
+region_rect = Rect2(81, 3, 29, 10)
+
+[node name="BasicShootPosition" type="Marker2D" parent="."]
+position = Vector2(33.75, 0)
+
+[node name="SpecialShootPosition" type="Marker2D" parent="."]
+position = Vector2(60, 0)
+
+[node name="UltimateShootPosition" type="Marker2D" parent="."]
+position = Vector2(91.25, -11.25)

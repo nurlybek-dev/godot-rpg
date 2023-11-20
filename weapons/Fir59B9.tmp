@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bld8kw6yca6eb"]
+
+[ext_resource type="Texture2D" uid="uid://bxmnr3ksdqr4j" path="res://assets/Pixel Crawler - FREE - 1.8/Weapons/Wood/Wood.png" id="1_8ebn3"]
+[ext_resource type="Script" path="res://weapons/FireWand.gd" id="1_xnhy5"]
+
+[node name="FireWand" type="Node2D"]
+scale = Vector2(0.8, 0.8)
+script = ExtResource("1_xnhy5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_8ebn3")
+offset = Vector2(14.5, 0)
+region_enabled = true
+region_rect = Rect2(81, 3, 29, 10)

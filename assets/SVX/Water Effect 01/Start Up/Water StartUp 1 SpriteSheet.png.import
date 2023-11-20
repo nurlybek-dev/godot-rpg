@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://bi78j2vsq2auf"
+path="res://.godot/imported/Water StartUp 1 SpriteSheet.png-9260936b354bb7ea5f8d15e1554d5215.ctex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/SVX/Water Effect 01/Start Up/Water StartUp 1 SpriteSheet.png"
+dest_files=["res://.godot/imported/Water StartUp 1 SpriteSheet.png-9260936b354bb7ea5f8d15e1554d5215.ctex"]
+
+[params]
+
+compress/mode=0
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=false
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=1
