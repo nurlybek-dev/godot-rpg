@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4oq7fb4xqvd7"]
+
+[ext_resource type="Texture2D" uid="uid://bl1a8c0oj8upj" path="res://assets/Pixel Crawler - FREE - 1.8/Environment/Green Woods/Assets/Trees.png" id="1_rc6ob"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w8yl8"]
+
+[node name="Tree1" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_rc6ob")
+offset = Vector2(0, -48)
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 95)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -9)
+shape = SubResource("CircleShape2D_w8yl8")

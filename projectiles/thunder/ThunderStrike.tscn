@@ -106,6 +106,7 @@ animations = [{
 radius = 21.0238
 
 [node name="ThunderStrike" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 0
 collision_mask = 8388610
 script = ExtResource("1_acorc")

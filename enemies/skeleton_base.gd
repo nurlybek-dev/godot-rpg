@@ -55,7 +55,6 @@ func chase(delta):
 		$AnimatedSprite2D.play("idle")
 
 func die():
-	return
 	died = true
 	$AnimatedSprite2D.offset.y = -15
 	$AnimatedSprite2D.play("death")
